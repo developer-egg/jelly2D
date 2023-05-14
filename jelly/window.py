@@ -21,11 +21,11 @@ class Window:
         self.title = title
 
         sdl2.ext.init()
-        self.window = sdl2.ext.Window(title, size=(width, height))
 
-        self.window.show()
+        # sdl_window should be used when accessing sdl window methods
+        self.sdl_window = sdl2.ext.Window(title, size=(width, height))
 
-        self.processor = sdl2.ext.TestEventProcessor()
-        self.processor.run(self.window)
+        self.sdl_window.show()
 
-        sdl2.ext.quit()
+    def refresh(self):
+        self.sdl_window.refresh()

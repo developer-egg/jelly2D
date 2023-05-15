@@ -5,6 +5,7 @@ import sdl2.ext
 # creates a 500 x 500 window titled "Hello, World!"
 window = jelly.Window("Hello, World!", 500, 500)
 
+
 # basic game loop to refresh to window
 # eventually jelly may have its own game loop and event system
 running = True

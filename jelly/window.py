@@ -27,5 +27,7 @@ class Window:
 
         self.sdl_window.show()
 
+        sdl2.ext.fill(self.sdl_window.get_surface(), sdl2.ext.Color(0, 0, 0))
+
     def refresh(self):
         self.sdl_window.refresh()

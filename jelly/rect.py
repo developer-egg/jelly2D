@@ -19,7 +19,7 @@ class Rect:
     :param height: The height of the rectangle.
     :type height: int
 
-    :param color: The r, g, b values of the color of the square.
+    :param color: The r, g, b values of the color of the rectangle.
     :type color: tuple
     """
 

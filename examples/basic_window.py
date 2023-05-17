@@ -1,6 +1,7 @@
 import jelly
 import sdl2
 import sdl2.ext
+import sdl2.sdlgfx
 
 # creates a 500 x 500 window titled "Hello, World!"
 window = jelly.Window("Hello, World!", 500, 500)

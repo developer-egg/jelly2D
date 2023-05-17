@@ -23,7 +23,7 @@ class Line:
     :type color: tuple
     """
 
-    def __init__(self, window, x1, y1, x2, y2, width=1, color=(255, 255, 255)):
+    def __init__(self, window, x1, y1, x2, y2, width=1, color=(0, 0, 0)):
         self.window = window
         
         self.x1 = x1

@@ -27,8 +27,8 @@ class Window:
 
         self.sdl_window.show()
 
-        # fill the background black
-        sdl2.ext.fill(self.sdl_window.get_surface(), sdl2.ext.Color(0, 0, 0))
+        # fill the background white
+        sdl2.ext.fill(self.sdl_window.get_surface(), sdl2.ext.Color(255, 255, 255))
 
         # renderer must be made using the window surface, not the window itself
         self.renderer = sdl2.ext.renderer.Renderer(self.sdl_window.get_surface())

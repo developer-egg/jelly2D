@@ -1,4 +1,4 @@
-import sdl2.ext
+import sdl2.sdlgfx
 
 class Line:
     """
@@ -23,7 +23,7 @@ class Line:
     :type color: tuple
     """
 
-    def __init__(self, window, x1, y1, x2, y2, color=(255, 255, 255)):
+    def __init__(self, window, x1, y1, x2, y2, width=1, color=(255, 255, 255)):
         self.window = window
         
         self.x1 = x1
@@ -31,6 +31,8 @@ class Line:
         self.x2 = x2
         self.y2 = y2
 
+        self.width = width
+
         self.color = color
 
-        sdl2.ext.draw.line(window.sdl_window.get_surface(), sdl2.ext.Color(self.color[0], self.color[1], self.color[2]), (x1, y1, x2, y2))
+        sdl2.sdlgfx.thickLineColor(window.renderer.renderer, x1, y1, x2, y2, width, sdl2.ext.Color(self.color[0], self.color[1], self.color[2]))

@@ -35,8 +35,5 @@ class Rect:
         self.window = window
         self.isFilled = isFilled
 
-        # *params destructures the tuple.
         params = (window.renderer.renderer, self.x1, self.y1, self.x2, self.y2, sdl2.ext.Color(self.color[0], self.color[1], self.color[2]))
-
-        # Shorthand if
         sdl2.sdlgfx.boxColor(*params) if isFilled else sdl2.sdlgfx.rectangleColor(*params)

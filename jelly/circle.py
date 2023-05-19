@@ -9,7 +9,5 @@ class Circle:
         self.isFilled = isFilled
         self.color = color
 
-        
-        #  isFilled:
         params = (window.renderer.renderer, x, y, radius, self.color[0], self.color[1], self.color[2], 255)
         sdl2.sdlgfx.filledCircleRGBA(*params) if isFilled else sdl2.sdlgfx.circleRGBA(*params)

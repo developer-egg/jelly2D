@@ -50,8 +50,6 @@ class Oval:
         self.opacity = round(255 * (opacity / 100))
         self.color = color
 
-        window.shapes.append(self)
-
         params = (
             window.renderer.renderer,
             self.x,

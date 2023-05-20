@@ -24,6 +24,6 @@ while running:
     for event in events:
         if event.type == sdl2.SDL_QUIT:
             running = False
-            break
+            break   
 
     window.refresh()

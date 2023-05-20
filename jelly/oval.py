@@ -40,7 +40,6 @@ class Oval:
         self.isFilled = isFilled
         self.color = color
 
-        if isFilled:
-            sdl2.sdlgfx.filledEllipseRGBA(window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], 255)
-        else:
-            sdl2.sdlgfx.ellipseRGBA(window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], 255)
+        params = (window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], 255)
+
+        sdl2.sdlgfx.filledEllipseRGBA(*params) if isFilled else sdl2.sdlgfx.ellipseRGBA(*params)

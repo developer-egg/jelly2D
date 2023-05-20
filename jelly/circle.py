@@ -1,5 +1,5 @@
 import sdl2.sdlgfx
-from errors import JellyInvalidColorException, JellyInvalidOpacityException
+from jelly.errors import JellyInvalidColorException, JellyInvalidOpacityException
 
 """
     Instantiate an object that draws a circle on the window.

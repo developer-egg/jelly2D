@@ -31,7 +31,9 @@ class Circle:
         self.isFilled = isFilled
         self.color = color
 
+        # *parmas unpacks the tuple
+        params = (window.renderer.renderer, x, y, radius, self.color[0], self.color[1], self.color[2], 255) 
         if isFilled:
-            sdl2.sdlgfx.filledCircleRGBA(window.renderer.renderer, self.x, self.y, self.radius, self.color[0], self.color[1], self.color[2], 255)
+            sdl2.sdlgfx.filledCircleRGBA(*params)
         else:
-            sdl2.sdlgfx.circleRGBA(window.renderer.renderer, self.x, self.y, self.radius, self.color[0], self.color[1], self.color[2], 255)
+            sdl2.sdlgfx.circleRGBA(*params)

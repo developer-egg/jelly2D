@@ -18,6 +18,8 @@ window = jelly.Window("Hello, World!", 500, 500)
 # eventually jelly may have its own game loop and event system
 running = True
 
+# shapes should not be inside the game loop for now
+
 while running:
     events = sdl2.ext.get_events()
 

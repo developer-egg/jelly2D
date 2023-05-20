@@ -26,7 +26,7 @@ import sdl2.sdlgfx
     """
 
 class Oval:
-    def __init__(self, window, x, y, width, height, isFilled=True, color=(0, 0, 0)):
+    def __init__(self, window, x, y, width, height, isFilled=True, opacity=100, color=(0, 0, 0)):
         self.window = window
 
         self.x = x
@@ -38,8 +38,13 @@ class Oval:
         self.height = height // 2
 
         self.isFilled = isFilled
+        self.opacity = round(255 * (opacity / 100))
         self.color = color
 
-        params = (window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], 255)
+        window.shapes.append(self)
+
+        params = (window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], self.opacity)
 
         sdl2.sdlgfx.filledEllipseRGBA(*params) if isFilled else sdl2.sdlgfx.ellipseRGBA(*params)
+
+    

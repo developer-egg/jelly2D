@@ -23,7 +23,7 @@ class Line:
     :type color: tuple
     """
 
-    def __init__(self, window, x1, y1, x2, y2, width=1, color=(0, 0, 0)):
+    def __init__(self, window, x1, y1, x2, y2, width=1, opacity=100, color=(0, 0, 0)):
         self.window = window
         
         self.x1 = x1
@@ -34,5 +34,6 @@ class Line:
         self.width = width
 
         self.color = color
+        self.opacity = round(255 * (opacity / 100))
 
-        sdl2.sdlgfx.thickLineColor(window.renderer.renderer, self.x1, self.y1, self.x2, self.y2, self.width, sdl2.ext.Color(self.color[0], self.color[1], self.color[2]))
+        sdl2.sdlgfx.thickLineRGBA(window.renderer.renderer, self.x1, self.y1, self.x2, self.y2, self.width, self.color[0], self.color[1], self.color[2], opacity)

@@ -23,7 +23,7 @@ class Window:
         sdl2.ext.init()
 
         # sdl_window should be used when accessing sdl window methods
-        self.sdl_window = sdl2.ext.Window(title, size=(width, height))
+        self.sdl_window = sdl2.ext.Window(self.title, size=(self.width, self.height))
 
         self.sdl_window.show()
 

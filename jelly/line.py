@@ -35,4 +35,4 @@ class Line:
 
         self.color = color
 
-        sdl2.sdlgfx.thickLineColor(window.renderer.renderer, x1, y1, x2, y2, width, sdl2.ext.Color(self.color[0], self.color[1], self.color[2]))
+        sdl2.sdlgfx.thickLineColor(window.renderer.renderer, self.x1, self.y1, self.x2, self.y2, self.width, sdl2.ext.Color(self.color[0], self.color[1], self.color[2]))

@@ -5,6 +5,7 @@
 Jelly is a 2D game library built on top of PySDL2. It aims to be a tool for game jam participants to rapidly develop their games.
 
 ## Project Goals
+
 - [x] Window Management
 - [ ] Shape and Image Drawing
   - [x] Rectangle
@@ -12,21 +13,21 @@ Jelly is a 2D game library built on top of PySDL2. It aims to be a tool for game
   - [x] Circle
   - [ ] Arc
   - [x] Ellipse (Oval)
-  - [ ] Polygon
+  - [x] Polygon
   - [ ] Images
   - [ ] Grid (Should be in window class to help with positioning/aligning, Ex. window.show_grid = True)
-- [ ] Game Loop    
+- [ ] Game Loop
 - [ ] Input Management
 - [ ] Audio Management
 - [ ] UI
   - [ ] Text
-  - [ ] Buttons   
+  - [ ] Buttons
 - [ ] Physics
 - [ ] Built in Solutions for Common Game Dev Systems
 
 ## Installing dependencies
 
-Installing dependencies is as easy as running 
+Installing dependencies is as easy as running
 
 ```
 pip install -r requirements.txt

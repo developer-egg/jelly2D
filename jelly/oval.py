@@ -36,7 +36,7 @@ class Oval:
 
         if not all(0 <= c <= 255 for c in color):
             raise JellyInvalidColorException(color)
-
+            
         self.window = window
 
         self.x = x
@@ -49,7 +49,7 @@ class Oval:
         self.isFilled = isFilled
         self.opacity = round(255 * (opacity / 100))
         self.color = color
-
+        
         params = (
             window.renderer.renderer,
             self.x,

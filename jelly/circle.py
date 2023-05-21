@@ -33,7 +33,7 @@ class Circle:
 
         if not all(0 <= c <= 255 for c in color):
             raise JellyInvalidColorException(color)
-
+            
         self.window = window
         self.x = x
         self.y = y

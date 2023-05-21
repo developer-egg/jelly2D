@@ -2,6 +2,7 @@ import sdl2.sdlgfx
 from jelly.errors import JellyInvalidColorException, JellyInvalidOpacityException
 
 
+
 class Line:
     """
     Instantiate an object that draws a line on the window.

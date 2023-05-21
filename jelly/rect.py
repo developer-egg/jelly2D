@@ -32,6 +32,7 @@ class Rect:
     def __init__(
         self, window, x1, y1, x2, y2, isFilled=True, opacity=100, color=(0, 0, 0)
     ):
+      
         if opacity < 0 or opacity > 100:
             raise JellyInvalidOpacityException(opacity)
 

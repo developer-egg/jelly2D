@@ -1,6 +1,7 @@
 import sys
 import sdl2.ext
 
+
 class Window:
     """
     Instantiate a game window.

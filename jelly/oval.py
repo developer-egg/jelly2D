@@ -19,19 +19,21 @@ import sdl2.sdlgfx
     :type height: int
 
     :param isFilled: Determines if the oval is filled or not.
-    :type isFilled: int
+    :type isFilled: bool
 
     :param color: The r, g, b values of the color of the oval.
     :type color: tuple
     """
 
+
 class Oval:
-    def __init__(self, window, x, y, width, height, isFilled=True, opacity=100, color=(0, 0, 0)):
+    def __init__(
+        self, window, x, y, width, height, isFilled=True, opacity=100, color=(0, 0, 0)
+    ):
         self.window = window
 
         self.x = x
         self.y = y
-
 
         # width and height are divided in half because pysdl takes in radius
         self.width = width // 2
@@ -43,8 +45,18 @@ class Oval:
 
         window.shapes.append(self)
 
-        params = (window.renderer.renderer, self.x, self.y, self.width, self.height, self.color[0], self.color[1], self.color[2], self.opacity)
+        params = (
+            window.renderer.renderer,
+            self.x,
+            self.y,
+            self.width,
+            self.height,
+            self.color[0],
+            self.color[1],
+            self.color[2],
+            self.opacity,
+        )
 
-        sdl2.sdlgfx.filledEllipseRGBA(*params) if isFilled else sdl2.sdlgfx.ellipseRGBA(*params)
-
-    
+        sdl2.sdlgfx.filledEllipseRGBA(*params) if isFilled else sdl2.sdlgfx.ellipseRGBA(
+            *params
+        )

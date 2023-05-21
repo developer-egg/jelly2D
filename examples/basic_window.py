@@ -1,6 +1,7 @@
 # Add this to each example, not sure how make this simpler
 import os
 import sys
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
@@ -26,6 +27,6 @@ while running:
     for event in events:
         if event.type == sdl2.SDL_QUIT:
             running = False
-            break   
+            break
 
     window.refresh()

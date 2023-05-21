@@ -1,4 +1,6 @@
 import sdl2.sdlgfx
+from jelly.errors import JellyInvalidColorException, JellyInvalidOpacityException
+
 
 
 class Line:
@@ -25,6 +27,12 @@ class Line:
     """
 
     def __init__(self, window, x1, y1, x2, y2, width=1, opacity=100, color=(0, 0, 0)):
+        if opacity < 0 or opacity > 100:
+            raise JellyInvalidOpacityException(opacity)
+
+        if not all(0 <= c <= 255 for c in color):
+            raise JellyInvalidColorException(color)
+
         self.window = window
 
         self.x1 = x1

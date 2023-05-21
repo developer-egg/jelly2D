@@ -1,4 +1,5 @@
 import sdl2.sdlgfx
+from jelly.errors import JellyInvalidColorException, JellyInvalidOpacityException
 
 """
     Instantiate an object that draws a circle on the window.
@@ -30,6 +31,12 @@ class Oval:
     def __init__(
         self, window, x, y, width, height, isFilled=True, opacity=100, color=(0, 0, 0)
     ):
+        if opacity < 0 or opacity > 100:
+            raise JellyInvalidOpacityException(opacity)
+
+        if not all(0 <= c <= 255 for c in color):
+            raise JellyInvalidColorException(color)
+            
         self.window = window
 
         self.x = x
@@ -42,9 +49,7 @@ class Oval:
         self.isFilled = isFilled
         self.opacity = round(255 * (opacity / 100))
         self.color = color
-
-        window.shapes.append(self)
-
+        
         params = (
             window.renderer.renderer,
             self.x,

@@ -1,5 +1,6 @@
 import sdl2.ext
 import sdl2.sdlgfx
+from jelly.errors import JellyInvalidColorException, JellyInvalidOpacityException
 
 
 class Rect:
@@ -31,6 +32,13 @@ class Rect:
     def __init__(
         self, window, x1, y1, x2, y2, isFilled=True, opacity=100, color=(0, 0, 0)
     ):
+      
+        if opacity < 0 or opacity > 100:
+            raise JellyInvalidOpacityException(opacity)
+
+        if not all(0 <= c <= 255 for c in color):
+            raise JellyInvalidColorException(color)
+
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2

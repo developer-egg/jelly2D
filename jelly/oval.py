@@ -49,9 +49,12 @@ class Oval:
         self.isFilled = isFilled
         self.opacity = round(255 * (opacity / 100))
         self.color = color
-        
+
+        self.window.shapes.append(self)
+
+    def draw(self):
         params = (
-            window.renderer.renderer,
+            self.window.renderer.renderer,
             self.x,
             self.y,
             self.width,
@@ -62,6 +65,6 @@ class Oval:
             self.opacity,
         )
 
-        sdl2.sdlgfx.filledEllipseRGBA(*params) if isFilled else sdl2.sdlgfx.ellipseRGBA(
+        sdl2.sdlgfx.filledEllipseRGBA(*params) if self.isFilled else sdl2.sdlgfx.ellipseRGBA(
             *params
         )

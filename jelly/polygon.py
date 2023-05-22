@@ -39,8 +39,11 @@ class Polygon:
         vx = (ctypes.c_int16 * len(x_coords))(*x_coords)
         vy = (ctypes.c_int16 * len(y_coords))(*y_coords)
 
-        params = (window.renderer.renderer, vx, vy, len(self.points),
+        self.window.shapes.append(self)
+
+    def draw(self):
+        params = (self.window.renderer.renderer, self.vx, self.vy, len(self.points),
                   self.color[0], self.color[1], self.color[2], self.opacity)
 
         sdl2.sdlgfx.filledPolygonRGBA(
-            *params) if isFilled else sdl2.sdlgfx.aapolygonRGBA(*params)
+            *params) if self.isFilled else sdl2.sdlgfx.aapolygonRGBA(*params)

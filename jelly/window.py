@@ -33,6 +33,13 @@ class Window:
 
         # renderer must be made using the window surface, not the window itself
         self.renderer = sdl2.ext.renderer.Renderer(self.sdl_window.get_surface())
+        
+        self.shapes = []
 
     def refresh(self):
+        self.renderer.clear(sdl2.SDL_Color(255, 255, 255))
+
+        for shape in self.shapes:
+            shape.draw()
+
         self.sdl_window.refresh()

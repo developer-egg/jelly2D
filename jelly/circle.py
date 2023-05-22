@@ -42,16 +42,19 @@ class Circle:
         self.color = color
         self.opacity = round(255 * (opacity / 100))
 
+        self.window.shapes.append(self)
+
+    def draw(self):
         params = (
-            window.renderer.renderer,
-            x,
-            y,
-            radius,
+            self.window.renderer.renderer,
+            self.x,
+            self.y,
+            self.radius,
             self.color[0],
             self.color[1],
             self.color[2],
-            opacity,
+            self.opacity,
         )
-        sdl2.sdlgfx.filledCircleRGBA(*params) if isFilled else sdl2.sdlgfx.aacircleRGBA(
+        sdl2.sdlgfx.filledCircleRGBA(*params) if self.isFilled else sdl2.sdlgfx.aacircleRGBA(
             *params
         )

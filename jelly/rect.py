@@ -48,8 +48,11 @@ class Rect:
         self.isFilled = isFilled
         self.opacity = round(255 * (opacity / 100))
 
+        self.window.shapes.append(self)
+
+    def draw(self):
         params = (
-            window.renderer.renderer,
+            self.window.renderer.renderer,
             self.x1,
             self.y1,
             self.x2,
@@ -59,4 +62,4 @@ class Rect:
             self.color[2],
             self.opacity,
         )
-        sdl2.sdlgfx.boxRGBA(*params) if isFilled else sdl2.sdlgfx.rectangleRGBA(*params)
+        sdl2.sdlgfx.boxRGBA(*params) if self.isFilled else sdl2.sdlgfx.rectangleRGBA(*params)

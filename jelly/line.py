@@ -45,8 +45,11 @@ class Line:
         self.color = color
         self.opacity = round(255 * (opacity / 100))
 
+        self.window.shapes.append(self)
+
+    def draw(self):
         sdl2.sdlgfx.thickLineRGBA(
-            window.renderer.renderer,
+            self.window.renderer.renderer,
             self.x1,
             self.y1,
             self.x2,
@@ -55,5 +58,5 @@ class Line:
             self.color[0],
             self.color[1],
             self.color[2],
-            opacity,
+            self.opacity,
         )

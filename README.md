@@ -2,7 +2,7 @@
 
 # Jelly
 
-Jelly is a 2D game library built on top of PySDL2. It aims to be a tool for game jam participants to rapidly develop their games.
+Jelly is no longer being worked on. Anything below was written when this project was being developed.
 
 ## Project Goals
 
@@ -15,18 +15,6 @@ Jelly is a 2D game library built on top of PySDL2. It aims to be a tool for game
   - [x] Polygon
   - [ ] Images
   - [ ] Grid (Should be in window class to help with positioning/aligning, Ex. window.show_grid = True)
-- [ ] Events
-  - [ ] Generic Event Class
-    - [ ] Keyboard Event Subclass
-    - [ ] Mouse Event Subclass
-    - [ ] Quit Event Subclass
-    - [ ] Possibly more to come in the future, these take priority
-- [ ] Audio Management
-- [ ] UI
-  - [ ] Text
-  - [ ] Buttons
-- [ ] Physics
-- [ ] Built in Solutions for Common Game Dev Systems
 
 ## Installing dependencies
 
